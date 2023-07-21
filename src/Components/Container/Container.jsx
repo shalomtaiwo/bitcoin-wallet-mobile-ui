@@ -13,7 +13,6 @@ export const Div = styled.div`
 export const SecondDiv = styled.div`
     text-decoration: none;
     background: #f6f8fe;
-    flex: 1;
     min-height: max-content;
 `;
 export const MainDiv = styled.div`
