@@ -1,40 +1,40 @@
 import { IconCompass, IconWallet, IconSettings, IconBell } from '@tabler/icons-react'
 import { NavLink } from 'react-router-dom'
 import ActionIcon from '../../Button/ActionIcon'
-import { BottomBar } from './BottomBar.styles'
+import { BottomBar, Div } from './BottomBar.styles'
 
 const BottomNav = ({ matches }) => {
     const item = [
         {
             label: 'Home',
-            icon: <IconWallet />,
+            icon: <IconWallet size={26} />,
             slug: '/',
         },
         {
-            label: 'Activity',
-            icon: <IconCompass />,
-            slug: '/',
+            label: 'Explore',
+            icon: <IconCompass size={26}/>,
+            slug: '/explore',
         },
         {
-            label: 'Community',
-            icon: <IconBell />,
-            slug: '/',
+            label: 'Notifications',
+            icon: <IconBell size={26} />,
+            slug: '/notification',
         },
         {
             label: 'Settings',
-            icon: <IconSettings />,
+            icon: <IconSettings size={26} />,
             slug: '/settings',
         }
     ]
     return (
-        <div>
+        <Div>
             <BottomBar $matches={matches}>
                 {
                     item?.map((items, index) => {
                         return (
                             <NavLink
                                 to={items?.slug}
-                                activeClassName="active"
+                                activeclassname="active"
                                 key={index}>
                                 <ActionIcon>
                                     {items?.icon}
@@ -44,7 +44,7 @@ const BottomNav = ({ matches }) => {
                     })
                 }
             </BottomBar>
-        </div>
+        </Div>
     )
 }
 

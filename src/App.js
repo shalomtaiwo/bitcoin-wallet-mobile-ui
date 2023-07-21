@@ -10,6 +10,7 @@ import "./Components/Fonts/sf-pro-display-font/SF-Pro-Display-Semibold.woff";
 import "./Components/Fonts/sf-pro-display-font/SF-Pro-Display-Bold.woff";
 import { useMedia } from "react-use";
 import { styled } from "styled-components";
+import NotFound from "./Pages/NotFound/NotFound";
 
 export const Div = styled.div`
 	display: flex;
@@ -21,23 +22,27 @@ export const Div = styled.div`
 const App = () => {
 	const matches = useMedia("(max-width: 414px)");
 
-  if(!matches){
-    return (
-      <Div>
-        <Routes>
-          <Route
-            path="/"
-            element={<Container matches={matches} />}
-          >
-            <Route
-              path="/"
-              element={<Wallet />}
-            />
-          </Route>
-        </Routes>
-      </Div>
-    );
-  }
+	if (!matches) {
+		return (
+			<Div>
+				<Routes>
+					<Route
+						path="/"
+						element={<Container matches={matches} />}
+					>
+						<Route
+							path="/"
+							element={<Wallet />}
+						/>
+						<Route
+							path="*"
+							element={<NotFound />}
+						/>
+					</Route>
+				</Routes>
+			</Div>
+		);
+	}
 
 	return (
 		<div>
@@ -49,6 +54,10 @@ const App = () => {
 					<Route
 						path="/"
 						element={<Wallet />}
+					/>
+					<Route
+						path="*"
+						element={<NotFound />}
 					/>
 				</Route>
 			</Routes>
