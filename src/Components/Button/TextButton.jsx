@@ -11,6 +11,7 @@ const Button = (props) => (
     $mb={props.mb}
     $mr={props.mr}
     $ml={props.ml}
+    onClick={props.onClick}
   >
     {props.children}
   </TextButton>
@@ -25,6 +26,7 @@ Button.propTypes = {
   mb: PropTypes.number,
   mr: PropTypes.number,
   ml: PropTypes.number,
+  onClick: PropTypes.any
 };
 
 
