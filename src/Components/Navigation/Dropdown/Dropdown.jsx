@@ -48,8 +48,5 @@ Dropdown.propTypes = {
   icon: PropTypes.any
 };
 
-Dropdown.defaultProps = {
-  // bla: 'test',
-};
 
 export default Dropdown;

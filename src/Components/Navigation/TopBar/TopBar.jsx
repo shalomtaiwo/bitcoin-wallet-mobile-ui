@@ -15,14 +15,14 @@ const optionsData = [
 const TopBar = () => (
   <Div>
     <ActionIcon>
-      <IconChevronLeft />
+      <IconChevronLeft size={28} />
     </ActionIcon>
 
     <Text color="#4c5968" size={26} space={-1}>
       Bitcoin Wallet
     </Text>
 
-    <Dropdown options={optionsData} icon={<IconDotsVertical />}  />
+    <Dropdown options={optionsData} icon={<IconDotsVertical size={28} />} />
   </Div>
 );
 

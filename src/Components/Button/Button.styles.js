@@ -32,10 +32,7 @@ export const TextButton = styled.button.attrs((props) => ({
 	}
 `;
 
-export const IconButton = styled.button.attrs((props) => ({
-	$size: props.$size || 12,
-	$color: props.$color || "#afb8c4",
-}))`
+export const IconButton = styled.button`
 	display: flex;
 	-webkit-border-radius: 28;
 	-moz-border-radius: 28;
@@ -43,9 +40,9 @@ export const IconButton = styled.button.attrs((props) => ({
 	border: 0;
 	cursor: pointer;
 	background: transparent;
-	font-family: Arial;
-	color: ${(props) => props.$color};
-	font-size: ${(props) => props.$size}px;
+	font-family: Semibold;
+	color: #afb8c4;
+	font-size: 12px;
 	padding: 10px 10px 10px 10px;
 	text-decoration: none;
 

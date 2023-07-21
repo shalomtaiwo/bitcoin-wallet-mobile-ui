@@ -21,8 +21,4 @@ Image.propTypes = {
   radius: PropTypes.number,
 };
 
-Image.defaultProps = {
-  // bla: 'test',
-};
-
 export default Image;
