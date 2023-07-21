@@ -4,7 +4,7 @@ import ActionIcon from '../../Button/ActionIcon';
 import { DropDn, DropDnLi, DropDnOptions } from './Dropdown.styles';
 import Text from '../../Typography/Text/Text';
 import Flex from '../../Typography/Flex/Flex';
-//import { Test } from './Dropdown.styles';
+import { useHover, useMedia } from 'react-use';
 
 const Dropdown = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -20,25 +20,54 @@ const Dropdown = (props) => {
     console.log(selectedOption)
   };
 
+  const element = () => {
+    return (
+      <DropDnOptions>
+        {props.options.map((option, index) => (
+          <DropDnLi key={index}>
+            <Flex justify={'space-between'}>
+              <Text color={'inherit'} size={14}>{option.label}</Text>
+              <ActionIcon>
+                {option.icon}
+              </ActionIcon>
+            </Flex>
+          </DropDnLi>
+        ))}
+      </DropDnOptions>
+    )
+  }
+
+  const [hoverable] = useHover(element);
+	const matches = useMedia("(max-width: 414px)");
+
+
+
   return (
     <DropDn>
       <ActionIcon onClick={toggleDropdown}>
         {props.icon}
       </ActionIcon>
-      {isOpen && (
-        <DropDnOptions>
-          {props.options.map((option, index) => (
-            <DropDnLi key={index} onClick={() => handleOptionClick(option)}>
-              <Flex justify={'space-between'}>
-                <Text color={'inherit'} size={14}>{option.label}</Text>
-                <ActionIcon>
-                  {option.icon}
-                </ActionIcon>
-              </Flex>
-            </DropDnLi>
-          ))}
-        </DropDnOptions>
-      )}
+      {!matches && hoverable}
+
+      {
+        matches &&
+        <>
+          {isOpen && (
+            <DropDnOptions>
+              {props.options.map((option, index) => (
+                <DropDnLi key={index} onClick={() => handleOptionClick(option)}>
+                  <Flex justify={'space-between'}>
+                    <Text color={'inherit'} size={14}>{option.label}</Text>
+                    <ActionIcon>
+                      {option.icon}
+                    </ActionIcon>
+                  </Flex>
+                </DropDnLi>
+              ))}
+            </DropDnOptions>
+          )}
+        </>
+      }
     </DropDn>
   )
 }

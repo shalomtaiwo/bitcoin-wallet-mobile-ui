@@ -3,14 +3,14 @@ import { Route, Routes } from "react-router-dom";
 import Container from "./Components/Container/Container";
 import Wallet from "./Pages/Wallet/Wallet";
 import "./App.css";
+import { useMedia } from "react-use";
+import { styled } from "styled-components";
+import NotFound from "./Pages/NotFound/NotFound";
 
 // Fonts
 import "./Components/Fonts/sf-pro-display-font/SF-Pro-Display-Regular.woff";
 import "./Components/Fonts/sf-pro-display-font/SF-Pro-Display-Semibold.woff";
 import "./Components/Fonts/sf-pro-display-font/SF-Pro-Display-Bold.woff";
-import { useMedia } from "react-use";
-import { styled } from "styled-components";
-import NotFound from "./Pages/NotFound/NotFound";
 
 export const Div = styled.div`
 	display: flex;
