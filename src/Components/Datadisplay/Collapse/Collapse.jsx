@@ -4,12 +4,17 @@ import { CollapseContent, CollapseHeader, MainCollapse } from './Collapse.styles
 
 const Collapse = (props) => {
 
+  const [isVisible, setIsVisible] = React.useState(false);
+
   const toggleCollapse = () => {
     props.setIsOpen(!props.isOpen);
+    setTimeout(() => {
+      setIsVisible(!isVisible);
+    }, 300);
   };
 
   const getContent = (content) => {
-      return <CollapseContent>{content}</CollapseContent>
+    return <>{isVisible && <CollapseContent>{content}</CollapseContent>}</>
   }
 
   return (
