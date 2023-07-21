@@ -14,6 +14,7 @@ export const SecondDiv = styled.div`
 	padding-top: 10px;
 	text-decoration: none;
     height: 100%;
+    overflow-y: auto;
 `;
 export const MainDiv = styled.div`
     height: 100%;
