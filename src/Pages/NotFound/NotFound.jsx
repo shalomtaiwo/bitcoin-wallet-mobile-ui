@@ -14,7 +14,7 @@ const NotFound = () => {
   }
 
   return (
-    <div style={{ height: '100%' }}>
+    <div style={{ height: '100vh' }}>
       <Flex align={'center'} justify={'center'} direction={'column'}>
         <Image src={notfound} height={200} />
         <Button bgColor={'#838383'} onClick={goTo}>Go to Home</Button>
