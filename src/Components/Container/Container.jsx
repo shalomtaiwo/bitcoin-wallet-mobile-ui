@@ -18,6 +18,7 @@ export const SecondDiv = styled.div`
 export const MainDiv = styled.div`
     height: 100%;
     width: 100%;
+    overflow-y: auto;
 `;
 
 const Container = ({ matches }) => {
