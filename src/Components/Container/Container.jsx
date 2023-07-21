@@ -11,15 +11,18 @@ export const Div = styled.div`
     height: 100%;
 `;
 export const SecondDiv = styled.div`
-	padding-top: 10px;
-	text-decoration: none;
-    height: 100%;
-    overflow-y: auto;
+    text-decoration: none;
+    background: #f6f8fe;
+    flex: 1;
+    min-height: max-content;
 `;
 export const MainDiv = styled.div`
-    height: 100%;
+    height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
+    position: relative;
 `;
 
 const Container = ({ matches }) => {
